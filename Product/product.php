@@ -39,7 +39,23 @@ $_SESSION['productID'] = $productID;
             break;
     }
 }
+function changeShipping() {
 
+// ***  Shipping Rates ***
+// First 2 kg 2$
+// Additional 1$ per 1 kg
+
+if ((weight*units)>2) {
+    shipping = (2 + Math.ceil(weight*units - 1) * 1);
+    shipping=(shipping / 100) * 100;
+    
+}else {
+    shipping=2;
+}
+
+document.getElementById('shippingCost').innerHTML=shipping.toFixed(2);
+
+}
     </script>
     <style>
     .productName{
