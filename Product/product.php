@@ -20,6 +20,25 @@ $_SESSION['productID'] = $productID;
     
 
     <script>
+                function changeImage(x) {
+    switch (x) {
+        case 2:
+            document.getElementById('image0').src="<?php echo $folder ?>/2.webp";
+            break;
+        case 3:
+            document.getElementById('image0').src="<?php echo $folder ?>/3.webp";
+            break;
+        case 4:
+            document.getElementById('image0').src="<?php echo $folder ?>/4.webp";
+            break;
+        case 5:
+            document.getElementById('image0').src="<?php echo $folder ?>/5.webp";
+            break;
+        default:
+        document.getElementById('image0').src="<?php echo $folder ?>/1.webp";
+            break;
+    }
+}
 
     </script>
     <style>

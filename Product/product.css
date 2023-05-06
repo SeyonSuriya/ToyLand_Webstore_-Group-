@@ -9,3 +9,20 @@ body{
     margin-right: 1cm;
     margin-bottom: 0.7cm;
 }
+.images{
+    float: left;
+    width: 38%;
+    
+    margin-right: 1cm;
+}
+
+.productDetails:after{
+    border-right: 1cm;
+    width: 62%;
+    float: right;
+    border-color: aliceblue;
+    border-style: solid;
+}
+.mainimagediv{
+    text-align: center;
+}
