@@ -23,3 +23,24 @@ body{
     border-color: aliceblue;
     border-style: solid;
 }
+.mainimagediv{
+    text-align: center;
+}
+.mainimage{
+    text-align: center;
+    width : 450px;
+    height: 450px;
+}
+.secondaryimagediv{
+    margin-top: 0.4cm;
+    text-align: center;
+}
+.secondaryimage{
+    width: 80px;
+    height: 75px;
+    border: 1px;
+    border-style: inset;
+}
+.secondaryimage:hover{
+    outline: 3px solid red; 
+}
