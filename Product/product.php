@@ -63,6 +63,14 @@ $_SESSION['productID'] = $productID;
             <img  id="image0" class="mainimage" src="<?php echo $folder ?>/1.webp" alt="image1" >
 
             </span>
+            </div>
+        <div class="secondaryimagediv">
+        <img onmouseenter="changeImage(1)" class="secondaryimage" id="image1" src="<?php echo $folder ?>/1.webp" alt="image1">
+        <img onmouseenter="changeImage(2)" class="secondaryimage" id="image2" src="<?php echo $folder ?>/2.webp" alt="image2">
+        <img onmouseenter="changeImage(3)" class="secondaryimage" id="image3" src="<?php echo $folder ?>/3.webp" alt="image3">
+        <img onmouseenter="changeImage(4)" class="secondaryimage" id="image4" src="<?php echo $folder ?>/4.webp" alt="image4">
+        <img onmouseenter="changeImage(5)" class="secondaryimage" id="image5" src="<?php echo $folder ?>/5.webp" alt="image5">
+        </div>
 
     
     </div>
