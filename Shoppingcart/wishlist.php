@@ -12,7 +12,15 @@
         <div class="whishlist-cntr">
             <div class="txt-heading">Wishlist</div>
             <div id="whishlist-grid">
-
+            <?php
+                $query = 'SELECT * FROM tbl_whish_list JOIN tblproduct ON tblproduct.id = tbl_whish_list.product_id';
+                //$result = $conn->query($query);
+                $result=mysqli_query($conn,$query);
+                $whish_array = $result->fetch_assoc();
+                //$whish_array = $db->select($query);
+                if (! empty($whish_array)) {
+                foreach ($whish_array as $key => $value) {
+            ?>
 	    
 		<div class="product-item">
                     <form method="post"
