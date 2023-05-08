@@ -124,3 +124,4 @@
             </div>
         </div>
     </header>
+    <script src="app.js"></script>
