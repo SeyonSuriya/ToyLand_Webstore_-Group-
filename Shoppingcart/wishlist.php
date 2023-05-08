@@ -12,7 +12,8 @@
         <div class="whishlist-cntr">
             <div class="txt-heading">Wishlist</div>
             <div id="whishlist-grid">
-            <?php
+
+	        <?php
                 $query = 'SELECT * FROM tbl_whish_list JOIN tblproduct ON tblproduct.id = tbl_whish_list.product_id';
                 //$result = $conn->query($query);
                 $result=mysqli_query($conn,$query);
@@ -21,7 +22,6 @@
                 if (! empty($whish_array)) {
                 foreach ($whish_array as $key => $value) {
             ?>
-	    
 		<div class="product-item">
                     <form method="post"
                         action="index.php?action=add&code=<?php echo $whish_array[$key]["code"]; ?>">
