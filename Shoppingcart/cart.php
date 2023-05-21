@@ -6,6 +6,13 @@
 
     $customerID = $_SESSION['customerID'];
 
+    if (isset($_REQUEST['delete'])){
+        $deleteproduct=$_REQUEST['delete'];
+        $sql3 = "DELETE  FROM cart  WHERE customerID=$customerID AND productID=$deleteproduct  ";
+        $conn->query($sql3);
+        }
+        
+
 
 
 
