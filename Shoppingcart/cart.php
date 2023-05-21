@@ -200,6 +200,32 @@
                 document.getElementById(id).innerHTML= "&nbsp;"+productunits[id] ;  
   
             }
+
+
+            var shipping=0;
+            function changeShipping() {
+                // ***  Shipping Rates ***
+                // First 2 kg 300 Lkr
+                // Additional lkr 150 per 1 kg
+                var weight=0;
+                shipping=0;
+                var index = -1;
+                for (let i = 0; i < numberofproducttypes; i++) {
+                    if(document.getElementById(index).checked){
+                        weight+=productunits[i]*productweights[i];
+                    }
+                    index-=1;
+                }
+
+                if (weight>2) {
+                    shipping = (2 + Math.ceil(weight - 1) * 1);
+                    shipping=(shipping / 100) * 100;
+                }else if(weight>0){
+                    shipping=2;
+                }
+    
+                document.getElementById('shippingCost').innerHTML=shipping.toFixed(2);
+            }
             </script>
 
 
