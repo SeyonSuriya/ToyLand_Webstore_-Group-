@@ -101,6 +101,13 @@
             integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
             crossorigin="anonymous"></script>
         <script type="text/javascript">
+        var productIDs =<?php echo json_encode($productsincart); ?>;
+        var numberofproducttypes=<?php echo count($productsincart) ;?>;
+        var productunits = <?php echo json_encode($productsunits); ?>;
+        var productmax = <?php echo json_encode($availableunits); ?>;
+        var productweights = <?php echo json_encode($productweights); ?>;
+        var productprices = <?php echo json_encode($productprices); ?>;
+        
        
       
        </script>
