@@ -226,6 +226,30 @@
     
                 document.getElementById('shippingCost').innerHTML=shipping.toFixed(2);
             }
+
+            var itemcosts=0;
+            var selectedproducts=[];
+            var selectedunits=[];
+            function changeitemscost() {
+                var index = -1;
+                itemcosts=0;
+                var l=0;
+                for (let i = 0; i < numberofproducttypes; i++) {
+                    if(document.getElementById(index).checked){
+                        selectedproducts[l]=productIDs[i];
+                        selectedunits[l]=productunits[i];
+                        l+=1;
+                        itemcosts+=productunits[i]*productprices[i];
+                    }
+                    index-=1;
+                }
+                document.getElementById('itemprices').innerHTML=itemcosts.toFixed(2);
+            }
+
+            function changetotal() {  
+                var totalcost= itemcosts + shipping;
+                document.getElementById('totalcost').innerHTML=totalcost.toFixed(2);
+            }
             </script>
 
 
