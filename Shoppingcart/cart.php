@@ -250,6 +250,18 @@
                 var totalcost= itemcosts + shipping;
                 document.getElementById('totalcost').innerHTML=totalcost.toFixed(2);
             }
+
+            // Checking if User selects Items to buy
+
+            function checkselected(){
+                if (selectedproducts[0]) {
+                    window.location.href = "../checkout/checkout.php?selectedunits="+selectedunits+"&selectedproducts="+selectedproducts;
+                }
+                else {
+                    alert('Please Select items to checkout');
+                }
+
+            }
             </script>
 
 
