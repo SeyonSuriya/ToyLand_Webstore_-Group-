@@ -263,6 +263,31 @@
 
             }
             </script>
+                    <!-- *************** Checkbox Selecting  *******************--> 
+            <script>
+            var selected=1;
+            function selectall() {
+                if (selected==1) {
+                    if (document.getElementById("allselected").checked=true) {
+                        for (var index = -1; index > -numberofproducttypes-1; index-=1) {
+                            document.getElementById(index).checked=true;
+                        }
+                        changeShipping();
+                        changeitemscost();
+                        changetotal();
+                    }
+                    selected=0;
+                }else{
+                    for (var index = -1; index > -numberofproducttypes-1; index-=1) {
+                        document.getElementById(index).checked=false;
+                        changeShipping();
+                        changeitemscost();
+                        changetotal();
+                    }
+                    document.getElementById("allselected").checked=false;
+                    selected=1;
+                }
+            }
 
 
 
