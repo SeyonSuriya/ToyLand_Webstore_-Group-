@@ -288,6 +288,22 @@
                     selected=1;
                 }
             }
+
+            function deselectall() {
+                changeShipping();
+                changeitemscost();
+                changetotal();
+                var all=1;
+                for (var index = -1; index > -numberofproducttypes-1; index--) {
+                    if (!(document.getElementById(index).checked)) {
+                        document.getElementById("allselected").checked=false;
+                        all=0; 
+                    }
+                }
+                if (all==1) {
+                    document.getElementById("allselected").checked=true;
+                }
+            }
             </script>
 
 
