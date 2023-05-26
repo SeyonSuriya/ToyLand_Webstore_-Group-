@@ -1,4 +1,26 @@
+<?php
+include "../connection/connection.php";
+session_start();
 
+// Catch from a session variable
+$customerID = $_SESSION['customerID'];
+
+// Catch from the cart
+$productsincart=$_REQUEST['selectedproducts'];
+$_SESSION['productsincart'] = explode (",", $productsincart);
+$productsincart = $_SESSION['productsincart'];
+
+// Catch from the cart
+$productsunits=$_REQUEST['selectedunits'];
+$_SESSION['productsunits'] = explode (",", $productsunits);
+
+$productsunits = [];
+for ($i=0; $i < count($productsincart); $i++) {
+    $productsunits[$i] = (int) $_SESSION['productsunits'][$i];
+}
+
+$i=0;
+?>
 
 <html>
     <head>
