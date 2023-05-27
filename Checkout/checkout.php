@@ -127,6 +127,24 @@ $i = 0;
            
             
         </style>
+                <script>
+               function changeUnits(x,id,unit,max) {
+                    if (x===1) {
+                        if (productunits[id]>1) {
+                        productunits[id] -=1;
+                        }
+                        }else if(x===2){
+                        if (productunits[id] < productmax[id]) {     
+                          productunits[id] += 1; 
+                        }
+                         }
+                         changeShipping();
+                         changeitemscost();
+                         changetotal();
+                        document.getElementById(id).innerHTML= "&nbsp;"+productunits[id] ;
+                        
+                }
+                </script>
        
      
 
