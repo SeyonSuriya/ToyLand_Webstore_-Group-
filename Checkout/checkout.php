@@ -20,6 +20,29 @@ for ($i=0; $i < count($productsincart); $i++) {
 }
 
 $i=0;
+
+
+// Getting product details
+$_SESSION['paymentconfirmation'] = 1;
+
+
+
+
+$availableunits = [];
+$productweights = [];
+$productprices = [];
+
+for ($i=0; $i < count($productsincart); $i++) {
+    $productID = $productsincart[$i];
+
+$sql4 = "SELECT * from product WHERE productID='".$productID."'";
+                    $result4 = $conn->query($sql4);
+                    $row4 = $result4->fetch_assoc();
+                    $availableunits[$i]=$row4['availableUnits'];
+                    $productweights[$i] =$row4['weight'];
+                    $productprices[$i] = $row4['price'];      
+}
+$i = 0;
 ?>
 
 <html>
