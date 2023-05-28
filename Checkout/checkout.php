@@ -166,6 +166,16 @@ if (weight>2) {
     
 document.getElementById('shippingCost').innerHTML=shipping.toFixed(2);
 }
+
+var itemcosts=0;
+function changeitemscost() {
+    itemcosts=0;
+    for (let i = 0; i < numberofproducttypes; i++) {
+        itemcosts+=productunits[i]*productprices[i];
+}
+document.getElementById('itemprices').innerHTML=itemcosts.toFixed(2);
+
+}
                 </script>
        
      
