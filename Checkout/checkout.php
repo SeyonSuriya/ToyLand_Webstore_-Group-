@@ -176,6 +176,13 @@ function changeitemscost() {
 document.getElementById('itemprices').innerHTML=itemcosts.toFixed(2);
 
 }
+
+function changetotal() {  
+    var totalcost= itemcosts + shipping;
+    document.getElementById('totalcost').innerHTML=totalcost.toFixed(2);
+
+}
+
                 </script>
        
      
