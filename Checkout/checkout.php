@@ -331,16 +331,9 @@ Place Order
                 
                 ?>
 
-
-
-
-
             </div>
-            
-
-
+        
         </div>
-
         <?php
             include '../mainpage/footer.php';
         ?>
