@@ -2,6 +2,7 @@
 include "../connection/connection.php";
 session_start();
 
+
 // Catch from a session variable
 $customerID = $_SESSION['customerID'];
 
@@ -22,7 +23,12 @@ for ($i=0; $i < count($productsincart); $i++) {
 $i=0;
 
 
-// Getting product details
+
+
+
+
+
+// To make sure having multiple orders in next page
 $_SESSION['paymentconfirmation'] = 1;
 
 
@@ -43,11 +49,14 @@ $sql4 = "SELECT * from product WHERE productID='".$productID."'";
                     $productprices[$i] = $row4['price'];      
 }
 $i = 0;
+
+
 ?>
 
 <html>
     <head>
         <title></title>
+
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
         <link rel="stylesheet" href="../mainpage/style.css"/>
@@ -79,7 +88,6 @@ $i = 0;
         var productprices = <?php echo json_encode($productprices); ?>;
       
         </script>
-
 
         <style>
             body{
@@ -125,9 +133,9 @@ $i = 0;
             }
             
            
-            
+    
         </style>
-                <script>
+        <script>
                function changeUnits(x,id,unit,max) {
                     if (x===1) {
                         if (productunits[id]>1) {
@@ -144,7 +152,6 @@ $i = 0;
                         document.getElementById(id).innerHTML= "&nbsp;"+productunits[id] ;
                         
                 }
-
                 var shipping=0;
                 function changeShipping() {
 
@@ -198,9 +205,12 @@ function checkpaymentmethod(){
 
 
 
-                </script>
-       
-     
+
+        </script>
+        <script>
+            
+            
+        </script>
 
     </head>
     <body onload="changeShipping();changeitemscost();changetotal()">
