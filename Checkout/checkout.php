@@ -183,6 +183,21 @@ function changetotal() {
 
 }
 
+var paymentmethod=0;
+function checkpaymentmethod(){
+    var m=paymentmethod;
+
+    if (m>0) {
+        window.location.href = "payment.php?units="+productunits+"&paymentmethod="+paymentmethod;
+     }
+     else {
+         alert('Please Select a payment method to place order');
+     }
+
+}
+
+
+
                 </script>
        
      
