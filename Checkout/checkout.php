@@ -245,7 +245,14 @@ Place Order
                 <div class="shippingaddress">
                     
                 <strong><span style="font-size: 0.6cm;">Shipping Address </span> </strong><br><br>
-              
+                <?php 
+                    $sql = "SELECT * from Customer where customerID='".$customerID."'";
+                    $result = $conn->query($sql);
+                $row = $result->fetch_assoc();
+                echo $row['customerName']."  ".$row['mobile']."<br>";
+                echo $row['addressLine1'] . "," . $row['addressLine2'].",<br>";
+                echo $row['District'].",".$row['Province'].",".$row['Country']." ".$row['postalCode']."<br>";
+                ?>
                 <span><a href="changeaddress.php">Change address</a></span>
                 </div>
                 <br><br>
