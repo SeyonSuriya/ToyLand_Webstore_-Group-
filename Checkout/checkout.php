@@ -28,6 +28,7 @@ $i=0;
 
 
 
+
 // To make sure having multiple orders in next page
 $_SESSION['paymentconfirmation'] = 1;
 
@@ -86,7 +87,8 @@ $i = 0;
         var productmax = <?php echo json_encode($availableunits); ?>;
         var productweights = <?php echo json_encode($productweights); ?>;
         var productprices = <?php echo json_encode($productprices); ?>;
-      
+        console.log(productunits);
+        console.log(productsincart);
         </script>
 
         <style>
@@ -133,7 +135,7 @@ $i = 0;
             }
             
            
-    
+            
         </style>
         <script>
                function changeUnits(x,id,unit,max) {
@@ -253,7 +255,6 @@ Place Order
 
             <div class="checkoutdetails">
                 <div class="shippingaddress">
-                    
                 <strong><span style="font-size: 0.6cm;">Shipping Address </span> </strong><br><br>
                 <?php 
                     $sql = "SELECT * from Customer where customerID='".$customerID."'";
@@ -261,9 +262,8 @@ Place Order
                 $row = $result->fetch_assoc();
                 echo $row['customerName']."  ".$row['mobile']."<br>";
                 echo $row['addressLine1'] . "," . $row['addressLine2'].",<br>";
-                echo $row['District'].",".$row['Province'].",".$row['Country']." ".$row['postalCode']."<br>";
+                echo $row['District'].",".$row['Province'].",".$row['Country']." ".$row['postalCode']."<br><br><br>";
                 ?>
-                <span><a href="changeaddress.php">Change address</a></span>
                 </div>
                 <br><br>
 
@@ -331,9 +331,16 @@ Place Order
                 
                 ?>
 
+
+
+
+
             </div>
-        
+            
+
+
         </div>
+
         <?php
             include '../mainpage/footer.php';
         ?>
